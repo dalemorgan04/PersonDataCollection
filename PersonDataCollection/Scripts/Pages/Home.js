@@ -38,15 +38,14 @@ var home = {
     },
     showForm: function (html) {
         $('#personForm').html(html);
-        $('#personTypeContainer').hide();
         $('#feedback').hide();
         $(document)
             .on('click', '#submitStaff', home.submitStaff)
             .on('click', '#submitClient', home.submitClient);
     },
     personIsValid: function () {
-        var $firstName = $('#firstName');
-        var $lastName = $('#lastName');
+        var $firstName = $('#forename');
+        var $lastName = $('#surname');
         var $dateOfBirth = $('#dateOfBirth');
         var $feedback = $('#feedback');
 
@@ -68,11 +67,13 @@ var home = {
             return false;
         }
 
+        $feedback.hide();
         return true;
     },
     addressIsValid: function () {
         var $street = $('#street');
         var $postcode = $('#postcode');
+        var $feedback = $('#feedback');
 
         if ($street.val() === '') {
             $feedback.html("Enter your street");
@@ -84,6 +85,8 @@ var home = {
             $feedback.show();
             return false;
         }
+
+        $feedback.hide();
         return true;
     },
     submitStaff: function (e) {
