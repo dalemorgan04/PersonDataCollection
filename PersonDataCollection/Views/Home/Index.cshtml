@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Your information";
+}
+
+<div class="container-fluid" id="pageContainer">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Data Collection Form</h3>
+            <p>
+                Fill in the following form to add data to the database
+            </p>
+        </div>
+    </div>
+
+    <div class="row" id="personTypeContainer">
+        <div class="col-md-12">
+            <a class="btn btn-success" id="staffButton">Add Staff</a>
+            <a class="btn btn-success" id="clientButton">Add Client</a>
+        </div>
+    </div>
+
+    @Html.AntiForgeryToken()
+
+    <div id="personForm"></div>
+
+</div>
+
+@section scripts {
+    @Scripts.Render("~/Scripts/Pages/home.js")
+}

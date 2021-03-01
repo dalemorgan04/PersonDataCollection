@@ -1,0 +1,9 @@
+﻿
+@{
+    ViewBag.Title = "Error";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Failed to add information, please try again</h2>
+
+@Html.ActionLink("Try Again", "Index", "Home", null, new { Class = "btn btn-success" })
